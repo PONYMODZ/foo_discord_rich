@@ -40,6 +40,7 @@ bool PresenceData::operator==( const PresenceData& other )
     return ( areStringsSame( presence.state, other.presence.state )
              && areStringsSame( presence.details, other.presence.details )
              && areStringsSame( presence.largeImageKey, other.presence.largeImageKey )
+             && areStringsSame( presence.largeImageUrl, other.presence.largeImageUrl )
              && areStringsSame( presence.largeImageText, other.presence.largeImageText )
              && areStringsSame( presence.smallImageKey, other.presence.smallImageKey )
              && areStringsSame( presence.smallImageText, other.presence.smallImageText )
@@ -59,6 +60,7 @@ void PresenceData::CopyData( const PresenceData& other )
     state = other.state;
     details = other.details;
     largeImageKey = other.largeImageKey;
+    largeImageUrl = other.largeImageUrl;
     smallImageKey = other.smallImageKey;
     trackLength = other.trackLength;
 
@@ -66,6 +68,7 @@ void PresenceData::CopyData( const PresenceData& other )
     presence.state = state.c_str();
     presence.details = details.c_str();
     presence.largeImageKey = ( largeImageKey.empty() ? nullptr : largeImageKey.c_str() );
+    presence.largeImageUrl = ( largeImageUrl.empty() ? nullptr : largeImageUrl.c_str() );
     presence.smallImageKey = ( smallImageKey.empty() ? nullptr : smallImageKey.c_str() );
 }
 
@@ -119,9 +122,8 @@ void PresenceModifier::UpdateImage()
     };
 
     auto setImageUrl = [&pd]( const std::u8string& imageUrl ) {
-        pd.largeImageKey = imageUrl;
-        pd.presence.largeImageKey = pd.largeImageKey.empty() ? nullptr : pd.largeImageKey.c_str();
-    };
+        pd.largeImageUrl = imageUrl;
+        pd.presence.largeImageUrl = pd.largeImageUrl.empty() ? nullptr : pd.largeImageUrl
 
     switch ( config::largeImageSettings )
     {
