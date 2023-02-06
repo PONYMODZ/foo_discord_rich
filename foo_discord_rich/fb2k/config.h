@@ -28,6 +28,7 @@ extern qwr::fb2k::ConfigString detailsQuery;
 extern qwr::fb2k::ConfigString discordAppToken;
 extern qwr::fb2k::ConfigString largeImageId_Light;
 extern qwr::fb2k::ConfigString largeImageId_Dark;
+extern qwr::fb2k::ConfigString largeImageId_Url;
 extern qwr::fb2k::ConfigString playingImageId_Light;
 extern qwr::fb2k::ConfigString playingImageId_Dark;
 extern qwr::fb2k::ConfigString pausedImageId_Dark;

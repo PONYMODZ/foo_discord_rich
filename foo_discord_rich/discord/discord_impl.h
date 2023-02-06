@@ -23,6 +23,7 @@ public:
     std::u8string state;
     std::u8string details;
     std::u8string largeImageKey;
+    std::u8string largeImageUrl;
     std::u8string smallImageKey;
     double trackLength = 0;
 };
