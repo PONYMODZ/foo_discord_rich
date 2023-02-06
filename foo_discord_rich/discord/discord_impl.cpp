@@ -118,6 +118,11 @@ void PresenceModifier::UpdateImage()
         pd.presence.largeImageKey = pd.largeImageKey.empty() ? nullptr : pd.largeImageKey.c_str();
     };
 
+    auto setImageUrl = [&pd]( const std::u8string& imageUrl ) {
+        pd.largeImageKey = imageUrl;
+        pd.presence.largeImageKey = pd.largeImageKey.empty() ? nullptr : pd.largeImageKey.c_str();
+    };
+
     switch ( config::largeImageSettings )
     {
     case config::ImageSetting::Light:
@@ -128,6 +133,11 @@ void PresenceModifier::UpdateImage()
     case config::ImageSetting::Dark:
     {
         setImageKey( config::largeImageId_Dark );
+        break;
+    }
+    case config::ImageSetting::Cover:
+    {
+        setImageUrl( config::largeImageId_Url );
         break;
     }
     case config::ImageSetting::Disabled:

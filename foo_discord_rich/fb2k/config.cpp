@@ -18,6 +18,7 @@ qwr::fb2k::ConfigString detailsQuery( guid::conf_details_query, "[%album artist%
 qwr::fb2k::ConfigString discordAppToken( guid::conf_app_token, "507982587416018945" );
 qwr::fb2k::ConfigString largeImageId_Light( guid::conf_large_image_id_light, "foobar2000" );
 qwr::fb2k::ConfigString largeImageId_Dark( guid::conf_large_image_id_dark, "foobar2000-dark" );
+qwr::fb2k::ConfigString largeImageId_Url( guid::conf_large_image_id_url, "cover-link" );
 qwr::fb2k::ConfigString playingImageId_Light( guid::conf_playing_image_id_light, "playing" );
 qwr::fb2k::ConfigString playingImageId_Dark( guid::conf_playing_image_id_dark, "playing-dark" );
 qwr::fb2k::ConfigString pausedImageId_Light( guid::conf_paused_image_id_light, "paused" );
